@@ -1,0 +1,94 @@
+@media (color) {
+  /* https://s9a.page/tape */
+  :root{--tape-filter:none;--tape-bluv:#11dff1;--tape-play:#fbbfff;--tape-loud:#eee833;--tape-luvu:#44f477;--tape-blaq:#0e0e0e;--tape-watt:#e0e0e0;--tape-hex:#e0e0e0;--tape-mix:transparent}.tape-watt{--tape-hex:var(--tape-watt)}.tape-luvu{--tape-hex:var(--tape-luvu)}.tape-loud{--tape-hex:var(--tape-loud)}.tape-play{--tape-hex:var(--tape-play)}.tape-bluv{--tape-hex:var(--tape-bluv)}.tape-flat{border-color:transparent}.tape-flap{border-color:currentColor}.tape-flow{--tape-remix:none}.tape-flow :not(.tape-skip){background-color:transparent;color:inherit}.tape-blaq,.tape-bluv,.tape-loud,.tape-luvu,.tape-play,.tape-watt{--tape-mix:var(--tape-hex);--tape-remix:none;color:var(--tape-blaq)!important;background-color:var(--tape-mix)!important;background-image:var(--tape-remix);filter:var(--tape-filter)}.tape-blaq{--tape-mix:var(--tape-blaq);color:var(--tape-hex)!important}.tape-erase,.tape-erase *{color:transparent!important}
+}
+
+@media (prefers-color-scheme: dark) {
+  .dbqp {
+    --tape-watt: thistle;
+    --tape-luvu: turquoise;
+    --tape-play: lightsalmon;
+    --tape-loud: #ec0;
+    --tape-blaq: #303;
+    --tape-bluv: deepskyblue;
+  }
+}
+
+@media (orientation: portrait) {
+  :root {
+    --tape-remix: radial-gradient(
+      var(--tape-play), 
+      var(--tape-bluv),
+      var(--tape-bluv),
+      var(--tape-play)
+    );
+  }
+}
+
+@media (orientation: landscape) {
+  :root {
+    --tape-remix: conic-gradient(
+      var(--tape-play), 
+      var(--tape-bluv),
+      var(--tape-bluv),
+      var(--tape-play)
+    );
+  }
+}
+
+::selection {
+  background: purple;
+  color: var(--tape-loud);
+}
+
+:focus-within {
+  --tape-filter: hue-rotate(-9deg);
+}
+
+:focus {
+  --tape-filter: hue-rotate(-18deg);
+  outline: thick dotted;
+  outline-offset: -0.2ch;
+  z-index: 1111;
+}
+
+:any-link { text-decoration: dotted line-through }
+:focus { text-decoration-style: wavy }
+:hover { text-decoration-style: double }
+
+.lab {
+  text-shadow:
+    0 1vh 0 var(--tape-hex),
+    0 2vh 0 var(--tape-hex),
+    0 3vh 0 powderblue;
+}
+
+html {
+  font-family: sans-serif;
+  font-size: max(3ch, 3vmax + 2vmin);
+  line-height: 1.618;
+}
+
+html:target { font-family: fantasy }
+body { margin: 0; overflow-wrap: anywhere }
+* { box-sizing: border-box }
+p { padding: 1ch }
+p:last-of-type { margin-bottom: 60vh }
+
+.p2p {
+  contain: layout;
+  display: flex;
+  flex-flow: row wrap;
+  font-size: max(3rem, 20vw);
+  font-weight: unset;
+  margin: auto;
+}
+
+.p2p > * {
+  align-items: center;
+  display: inline-flex;
+  flex-basis: calc(100% / 3);
+  justify-content: center;
+  margin: auto;
+  padding: 0;
+}
